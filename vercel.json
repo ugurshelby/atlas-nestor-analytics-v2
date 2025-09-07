@@ -1,0 +1,103 @@
+{
+  "version": 2,
+  "name": "atlas-nestor-analytics-v2",
+  "buildCommand": "echo 'Static site - no build needed'",
+  "outputDirectory": ".",
+  "installCommand": "npm install",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/pages/index.html"
+    },
+    {
+      "source": "/google-ads",
+      "destination": "/pages/google-ads.html"
+    },
+    {
+      "source": "/genel-analiz",
+      "destination": "/pages/genel-analiz.html"
+    },
+    {
+      "source": "/sosyal-medya",
+      "destination": "/pages/sosyal-medya.html"
+    },
+    {
+      "source": "/web-sitesi",
+      "destination": "/pages/web-sitesi.html"
+    },
+    {
+      "source": "/reklam",
+      "destination": "/pages/reklam.html"
+    },
+    {
+      "source": "/google-analytics",
+      "destination": "/pages/google-analytics.html"
+    },
+    {
+      "source": "/instagram",
+      "destination": "/pages/instagram.html"
+    },
+    {
+      "source": "/linkedin",
+      "destination": "/pages/linkedin.html"
+    },
+    {
+      "source": "/youtube",
+      "destination": "/pages/youtube.html"
+    },
+    {
+      "source": "/email-marketing",
+      "destination": "/pages/email-marketing.html"
+    },
+    {
+      "source": "/ubersuggest",
+      "destination": "/pages/ubersuggest.html"
+    },
+    {
+      "source": "/also-asked",
+      "destination": "/pages/also-asked.html"
+    },
+    {
+      "source": "/linktree",
+      "destination": "/pages/linktree.html"
+    },
+    {
+      "source": "/seo",
+      "destination": "/pages/seo.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}
