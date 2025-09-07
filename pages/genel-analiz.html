@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genel Analiz Raporu - Atlas Nestor Analytics</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="../assets/script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div>
+                    <h1>Atlas Nestor</h1>
+                    <p class="subtitle">Analytics Dashboard</p>
+                </div>
+            </a>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Ana Sayfa</a>
+                <a href="genel-analiz.html" class="nav-link active">Genel Analiz</a>
+                <a href="sosyal-medya.html" class="nav-link">Sosyal Medya</a>
+                <a href="web-sitesi.html" class="nav-link">Web Sitesi</a>
+                <a href="reklam.html" class="nav-link">Reklam</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section id="overview" class="hero">
+            <div class="container">
+                <div class="hero-header">
+                    <div class="hero-title">
+                        <h2>📊 Genel Analiz Raporu</h2>
+                        <p>Atlas Nestor Dijital Pazarlama - Tüm Platformlar Entegre Analizi</p>
+                    </div>
+                    <div class="hero-actions">
+                        <button id="downloadPdfBtn" class="btn-pdf">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>PDF İndir</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Genel Başarı Vurgusu -->
+                <div class="highlight-box" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); border: 1px solid #3b82f6;">
+                    <h3>🏆 Atlas Nestor Dijital Pazarlama Başarı Özeti</h3>
+                    <div class="stats-grid" style="margin-top: 2rem;">
+                        <div class="stat-card" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+                            <div class="stat-icon">
+                                <i class="fas fa-envelope" style="color: #60a5fa;"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>12,076</h3>
+                                <p>Toplam E-posta Gönderimi</p>
+                                <span style="color: #60a5fa;">%89.2 Ulaşma Oranı</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+                            <div class="stat-icon">
+                                <i class="fas fa-bullhorn" style="color: #60a5fa;"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>271,332</h3>
+                                <p>Google Ads Gösterim</p>
+                                <span style="color: #60a5fa;">10,317 Tıklama</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+                            <div class="stat-icon">
+                                <i class="fas fa-share-alt" style="color: #60a5fa;"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>50,575</h3>
+                                <p>Sosyal Medya Görüntüleme</p>
+                                <span style="color: #60a5fa;">3 Aktif Platform</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+                            <div class="stat-icon">
+                                <i class="fas fa-globe" style="color: #60a5fa;"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>1,933</h3>
+                                <p>Web Sitesi Kullanıcı</p>
+                                <span style="color: #60a5fa;">4,095 Sayfa Görüntüleme</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Detaylı Platform Metrikleri -->
+                <div class="highlight-box" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 1px solid #334155; margin-top: 2rem;">
+                    <h3>📊 Detaylı Platform Performans Metrikleri</h3>
+                    <div class="stats-grid" style="margin-top: 2rem;">
+                        <div class="stat-card" style="background: rgba(59, 130, 246, 0.1); border: 1px solid #3b82f6;">
+                            <div class="stat-icon">
+                                <i class="fab fa-instagram" style="color: #e1306c;"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>47,480</h3>
+                                <p>Instagram Görüntüleme</p>
+                                <span style="color: #10b981;">%100 Etkileşim Artışı</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card" style="background: rgba(0, 119, 181, 0.1); border: 1px solid #0077b5;">
+                            <div class="stat-icon">
+                                <i class="fab fa-linkedin" style="color: #0077b5;"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>1,406</h3>
+                                <p>LinkedIn Görüntüleme (90 gün)</p>
+                                <span style="color: #10b981;">%533.3 Reaksiyon Artışı</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card" style="background: rgba(255, 0, 0, 0.1); border: 1px solid #ff0000;">
+                            <div class="stat-icon">
+                                <i class="fab fa-youtube" style="color: #ff0000;"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>1,689</h3>
+                                <p>YouTube Görüntüleme</p>
+                                <span style="color: #10b981;">7.45 Saat İzlenme</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card" style="background: rgba(52, 168, 83, 0.1); border: 1px solid #34a853;">
+                            <div class="stat-icon">
+                                <i class="fas fa-search" style="color: #34a853;"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>190</h3>
+                                <p>SEO İç Link</p>
+                                <span style="color: #10b981;">0 Spam Riski</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="performance" class="platforms">
+            <div class="container">
+                <h2>📈 Platform Performans Analizi</h2>
+                <p>Her platformun detaylı başarı metrikleri ve trend analizi</p>
+                
+                <div class="platforms-grid">
+                    <div class="platform-card">
+                        <div class="platform-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>E-posta Pazarlama</h3>
+                        <p>En güçlü platform - %89.2 ulaşma oranı</p>
+                        <div class="platform-stats">
+                            <span class="stat">12,076 Toplam Gönderim</span>
+                            <span class="stat">1,962 Okuma (%16.2)</span>
+                            <span class="stat">62 Tıklama (%0.51)</span>
+                            <span class="stat">%89.2 Ulaşma Oranı</span>
+                            <span class="stat">%70.9 Yeniden Gönderim Başarı</span>
+                            <span class="stat">%0.3 Spam Şikayeti</span>
+                        </div>
+                        <div class="platform-analysis">
+                            <h4>🎯 Başarı Faktörleri:</h4>
+                            <ul>
+                                <li><strong>Mükemmel Ulaşma:</strong> %89.2 (endüstri ortalaması %80-85)</li>
+                                <li><strong>Düşük Bounce:</strong> %10.8 (endüstri ortalaması %15-20)</li>
+                                <li><strong>Yeniden Gönderim:</strong> %70.9 okuma oranı</li>
+                                <li><strong>En Başarılı Grup:</strong> 75-100 personel (%17.56)</li>
+                                <li><strong>ROI:</strong> Yeniden gönderim %46.6 artış sağladı</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="platform-card">
+                        <div class="platform-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3>Google Ads</h3>
+                        <p>Güçlü görünürlük - 271,332 gösterim</p>
+                        <div class="platform-stats">
+                            <span class="stat">271,332 Toplam Gösterim</span>
+                            <span class="stat">10,317 Tıklama (%3.8)</span>
+                            <span class="stat">23,290 TRY Toplam Harcama</span>
+                            <span class="stat">2.26 TRY/Tıklama Maliyet</span>
+                            <span class="stat">%5.81 Arama Kampanyası Etkileşim</span>
+                            <span class="stat">%6.84 Ana Sayfa Tıklama Oranı</span>
+                        </div>
+                        <div class="platform-analysis">
+                            <h4>🎯 Başarı Faktörleri:</h4>
+                            <ul>
+                                <li><strong>En Yüksek Gösterim:</strong> Çarşamba (30,464)</li>
+                                <li><strong>En Yüksek Etkileşim:</strong> Cumartesi (%3.31)</li>
+                                <li><strong>En Düşük Maliyet:</strong> Salı (163.65 TRY)</li>
+                                <li><strong>Arama Kampanyaları:</strong> %5.81 etkileşim oranı</li>
+                                <li><strong>Ana Sayfa:</strong> %6.84 tıklama oranı</li>
+                                <li><strong>Ücretsiz Sorgulama:</strong> %7.97 tıklama oranı</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="platform-card">
+                        <div class="platform-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <h3>Sosyal Medya</h3>
+                        <p>Çoklu platform başarısı - 50,575 toplam görüntüleme</p>
+                        <div class="platform-stats">
+                            <span class="stat">50,575 Toplam Görüntüleme</span>
+                            <span class="stat">394 Toplam Etkileşim</span>
+                            <span class="stat">3 Aktif Platform</span>
+                            <span class="stat">Instagram 47,480 Görüntüleme</span>
+                            <span class="stat">LinkedIn %533.3 Reaksiyon Artışı</span>
+                            <span class="stat">YouTube 1,689 Görüntüleme</span>
+                        </div>
+                        <div class="platform-analysis">
+                            <h4>🎯 Başarı Faktörleri:</h4>
+                            <ul>
+                                <li><strong>Instagram:</strong> 47,480 görüntüleme, %100 etkileşim artışı</li>
+                                <li><strong>LinkedIn:</strong> %533.3 reaksiyon artışı, 1,406 görüntüleme</li>
+                                <li><strong>YouTube:</strong> 1,689 görüntüleme, 7.45 saat izlenme</li>
+                                <li><strong>Organik vs Reklam:</strong> Instagram %41.4 organik</li>
+                                <li><strong>Cross-platform:</strong> Entegre strateji</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="platform-card">
+                        <div class="platform-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Web Sitesi & SEO</h3>
+                        <p>Organik trafik büyümesi - 1,933 kullanıcı</p>
+                        <div class="platform-stats">
+                            <span class="stat">1,933 GA4 Kullanıcı</span>
+                            <span class="stat">4,095 Sayfa Görüntüleme</span>
+                            <span class="stat">52 GSC Tıklama</span>
+                            <span class="stat">101 GSC Gösterim</span>
+                            <span class="stat">190 SEO İç Link</span>
+                            <span class="stat">2:30 Ortalama Oturum</span>
+                        </div>
+                        <div class="platform-analysis">
+                            <h4>🎯 Başarı Faktörleri:</h4>
+                            <ul>
+                                <li><strong>Google Analytics:</strong> 1,933 kullanıcı, 2,666 oturum</li>
+                                <li><strong>SEO Optimizasyonu:</strong> 190 iç link, 0 spam riski</li>
+                                <li><strong>Search Console:</strong> 52 tıklama, 101 gösterim</li>
+                                <li><strong>Oturum Süresi:</strong> 2:30 ortalama, 1:01 etkileşim</li>
+                                <li><strong>Organik Trafik:</strong> Sürekli büyüme trendi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="insights" class="insights">
+            <div class="container">
+                <h2>🔍 Kritik İçgörüler ve Trendler</h2>
+                <p>Veri analizinden çıkan stratejik bulgular</p>
+                
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <h4>📧 E-posta Pazarlama - En Güçlü Platform</h4>
+                        <p><strong>Başarı Oranı:</strong> %89.2 ulaşma oranı (endüstri ortalaması %80-85)<br>
+                        <strong>Yeniden Gönderim:</strong> %70.9 okuma oranı<br>
+                        <strong>Hedef Kitle:</strong> 75-100 personel en başarılı (%17.56)<br>
+                        <strong>ROI:</strong> Yeniden gönderim %46.6 artış sağladı<br>
+                        <strong>Spam Oranı:</strong> %0.3 (endüstri ortalaması %0.5-1)<br>
+                        <strong>Strateji:</strong> Yeniden gönderim tüm kampanyalara uygulanmalı</p>
+                    </div>
+                    
+                    <div class="insight-card">
+                        <h4>🎯 Google Ads - Zaman Bazlı Optimizasyon</h4>
+                        <p><strong>En İyi Gün:</strong> Çarşamba (30,464 gösterim)<br>
+                        <strong>En Yüksek Etkileşim:</strong> Cumartesi (%3.31)<br>
+                        <strong>En Düşük Maliyet:</strong> Salı (163.65 TRY)<br>
+                        <strong>Kampanya Türü:</strong> Arama kampanyaları %5.81 etkileşim<br>
+                        <strong>Ana Sayfa:</strong> %6.84 tıklama oranı<br>
+                        <strong>Strateji:</strong> Çarşamba ve Cumartesi odaklanma</p>
+                    </div>
+                    
+                    <div class="insight-card">
+                        <h4>📱 Sosyal Medya - Instagram Dominansı</h4>
+                        <p><strong>Ana Platform:</strong> Instagram 47,480 görüntüleme<br>
+                        <strong>Büyüme:</strong> %100 etkileşim artışı<br>
+                        <strong>LinkedIn:</strong> %533.3 reaksiyon artışı (1,406 görüntüleme)<br>
+                        <strong>YouTube:</strong> 1,689 görüntüleme, 7.45 saat izlenme<br>
+                        <strong>Organik Oran:</strong> Instagram %41.4 organik<br>
+                        <strong>Strateji:</strong> Instagram organik içerik artırılmalı</p>
+                    </div>
+                    
+                    <div class="insight-card">
+                        <h4>🌐 Web Sitesi & SEO - Organik Büyüme</h4>
+                        <p><strong>Kullanıcı:</strong> 1,933 GA4 kullanıcı, 2,666 oturum<br>
+                        <strong>Sayfa Görüntüleme:</strong> 4,095 toplam<br>
+                        <strong>SEO:</strong> 52 GSC tıklama, 101 gösterim<br>
+                        <strong>İç Link:</strong> 190 SEO iç link, 0 spam riski<br>
+                        <strong>Oturum Süresi:</strong> 2:30 ortalama, 1:01 etkileşim<br>
+                        <strong>Strateji:</strong> SEO optimizasyonu devam etmeli</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="recommendations" class="analysis-section">
+            <div class="container">
+                <h2>🚀 Stratejik Öneriler</h2>
+                <p>Veri analizine dayalı aksiyon planları</p>
+                
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <h4>⚡ Kısa Vadeli (1-2 Hafta)</h4>
+                        <p><strong>E-posta:</strong> Yeniden gönderim stratejisini tüm kampanyalara uygula<br>
+                        <strong>Google Ads:</strong> Çarşamba ve Cumartesi bütçe artırımı<br>
+                        <strong>Sosyal Medya:</strong> Instagram organik içerik artırımı<br>
+                        <strong>Web Sitesi:</strong> SEO optimizasyonu devam</p>
+                    </div>
+                    
+                    <div class="insight-card">
+                        <h4>📈 Orta Vadeli (1-2 Ay)</h4>
+                        <p><strong>E-posta:</strong> Otomatik yeniden gönderim sistemi<br>
+                        <strong>Google Ads:</strong> Anahtar kelime genişletme<br>
+                        <strong>Sosyal Medya:</strong> Cross-platform entegrasyon<br>
+                        <strong>Web Sitesi:</strong> A/B test programı</p>
+                    </div>
+                    
+                    <div class="insight-card">
+                        <h4>🎯 Uzun Vadeli (3-6 Ay)</h4>
+                        <p><strong>E-posta:</strong> Kişiselleştirilmiş içerik<br>
+                        <strong>Google Ads:</strong> AI destekli optimizasyon<br>
+                        <strong>Sosyal Medya:</strong> Video içerik stratejisi<br>
+                        <strong>Web Sitesi:</strong> Performans izleme sistemi</p>
+                    </div>
+                    
+                    <div class="insight-card">
+                        <h4>💰 ROI Optimizasyonu</h4>
+                        <p><strong>En Yüksek ROI:</strong> E-posta pazarlama<br>
+                        <strong>En Düşük Maliyet:</strong> Sosyal medya organik<br>
+                        <strong>En Yüksek Etki:</strong> Google Ads gösterim<br>
+                        <strong>En Sürdürülebilir:</strong> Web sitesi SEO</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusion" class="hero" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);">
+            <div class="container">
+                <h2>🎯 Genel Değerlendirme</h2>
+                <p>Atlas Nestor Dijital Pazarlama - Başarı Özeti</p>
+                
+                <div class="highlight-box" style="background: rgba(59, 130, 246, 0.1); border: 1px solid #3b82f6;">
+                    <h3>🏆 Ana Başarılar</h3>
+                    <div class="stats-grid" style="margin-top: 2rem;">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-trophy" style="color: #fbbf24;"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>%89.2</h3>
+                                <p>E-posta Ulaşma Oranı</p>
+                                <span style="color: #10b981;">Endüstri ortalaması üzerinde</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-chart-line" style="color: #fbbf24;"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>271,332</h3>
+                                <p>Toplam Gösterim</p>
+                                <span style="color: #10b981;">Google Ads başarısı</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users" style="color: #fbbf24;"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>1,933</h3>
+                                <p>Web Sitesi Kullanıcı</p>
+                                <span style="color: #10b981;">Organik büyüme</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-heart" style="color: #fbbf24;"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>50,575</h3>
+                                <p>Sosyal Medya Görüntüleme</p>
+                                <span style="color: #10b981;">Çoklu platform başarısı</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <h3>🎯 Sonuç ve Gelecek Vizyonu</h3>
+                    <p>Atlas Nestor olarak dijital pazarlama alanında güçlü bir konumda bulunuyoruz. E-posta pazarlama en güçlü platformumuz olarak öne çıkarken, Google Ads ile geniş bir kitleye ulaşıyoruz. Sosyal medya ve web sitesi performansımız da sürekli büyüme trendinde.</p>
+                    
+                    <p><strong>Öncelikli Stratejiler:</strong></p>
+                    <ul style="text-align: left; max-width: 800px; margin: 0 auto;">
+                        <li>E-posta pazarlama yeniden gönderim stratejisini tüm kampanyalara uygulama</li>
+                        <li>Google Ads'de zaman bazlı optimizasyon ile maliyet düşürme</li>
+                        <li>Instagram'da organik içerik üretimini artırma</li>
+                        <li>Web sitesi SEO optimizasyonunu sürdürme</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Atlas Nestor Analytics. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+</body>
+</html>
